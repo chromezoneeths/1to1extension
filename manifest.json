@@ -1,0 +1,24 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "ChromeZone 1:1",
+  "version": "1.5",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "chromelogo.png",
+    "default_title": "ChromeZone 1:1"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["receipt.js", "barcode.js", "jspdf.js", "canvag.js"]
+  }],
+  "permissions": [
+    "activeTab", "http://*.customapp.eths.k12.il.us/*", "https://*.customapp.eths.k12.il.us/*", "tabs", "storage", "contextMenus"
+  ],
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
+}
