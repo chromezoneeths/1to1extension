@@ -64,6 +64,9 @@ function loanerCheckout() {
     console.log(chrometech);*/
 
     exportPdf(); //Generates a pdf
+  } else {
+    document.getElementById('MainContent_btnSave').setAttribute('type', 'submit');
+    document.getElementById('MainContent_btnSave').click();
   }
 }
 
@@ -150,6 +153,9 @@ function exportPdf() {
   doc.addImage(img, 0.25, 6, 4, 1);
   //Saves as a PDF (will send to cloudprint in the future)
   doc.save('reciept');
+  //Return to home.
+  document.getElementById('MainContent_btnSave').setAttribute('type', 'submit');
+  document.getElementById('MainContent_btnSave').click();
 }
 var doSubmit = false; //Old
 
